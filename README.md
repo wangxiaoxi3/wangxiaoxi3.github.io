@@ -1,5 +1,34 @@
-## Welcome to XiaoXi Pages
+---
+layout: page
+title: About
+permalink: /about/
+---
 
-You can use the [editor on GitHub](https://github.com/wangxiaoxi3/wangxiaoxi3.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+## Theme Monos
+> Simple and lightweight theme for Jekyll
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### Features
+- Responsive.
+- Syntax Highlight
+- Most optimized theme for tech blog.
+- Lightweight with minimum stylesheet.
+- Easy to customize.
+- Offers category menu.
+
+### _config.yml
+> Code block will look like this.
+```yml
+highlighter-theme: monokai //you can change your syntax color scheme.
+date_format: "%Y-%M-%D" //and date format.
+```
+
+### Screenshots
+#### Page
+![alt text](/public/img/screenshot-1.png)
+#### Articles
+![alt text](/public/img/screenshot-2.png)
+#### Page - Mobile
+![alt text](/public/img/screenshot-m1.png)
+#### Page - Articles
+![alt text](/public/img/screenshot-m2.png)
+****
