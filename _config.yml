@@ -1,1 +1,9 @@
-theme: jekyll-theme-architect
+#
+# This file contains configuration flags to customize your site
+#
+# Name of your site (displayed in the header)
+name: XiaoXi
+# Short bio or description (displayed in the header)
+description: 定期分享测试开发的心路历程
+# URL of your avatar or profile pic (you could use your GitHub profile pic)
+avatar: https://avatars3.githubusercontent.com/u/34188429?s=460&u=9c8ebb94dc58a496aec50f6b560c25831875bbe9&v=4
