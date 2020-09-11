@@ -35,7 +35,7 @@ browser.get('https://www.baidu.com')
 print browser.title
 browser.quit()
 ```
-如果能调用chrome浏览器，即表示安装成功![chromedriver](/image/chromedriver.png)
+如果能调用chrome浏览器，即表示安装成功![chromedriver](/public/image/chromedriver.png)
 
 
 ### 三、遇到问题
