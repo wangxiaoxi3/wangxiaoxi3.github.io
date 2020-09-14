@@ -90,7 +90,7 @@ categories: python
 匹配结果：`!@#`
 ```
 
-*(pattern)*
+* (pattern)*
 允许模式重复0次或多次
 ```
 例：待匹配文本：“www.jianshu.com”
