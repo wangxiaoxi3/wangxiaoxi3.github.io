@@ -1,0 +1,65 @@
+I"	<h4 id="一集合set和字典dict区别">一、集合（set）和字典（dict）区别：</h4>
+<p>1、字典是一系列由键key和值value配对组成的元素的集合，在python3.7+，字典被确定为有序。3.6之前是无序的，其长度大小可变，元素可以任意的删减和改变。</p>
+
+<p>2、集合没有键和值的配对，是一系列无序的，唯一的元素组合。</p>
+
+<h4 id="二创建集合set和字典dict">二、创建集合（set）和字典（dict）</h4>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># 创建字典
+d1 = {'name':'jason','age':20,'gender':'male'}
+d2 = dict({'name':'jason','age':20,'gender':'male'})
+d3 = dict([('name','jason'),('age',20),('gender','male')])
+d4 = dict(name='jason',age=20,gender='male')
+
+#创建集合
+s1 = {1,2,3}
+s2 = set([1,2,3])
+</code></pre></div></div>
+
+<h4 id="三集合set操作方法">三、集合（set）操作方法</h4>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>s = {5,1,2,3}
+# 判断元素在不在集合内
+1 in s
+&gt; True
+# 添加元素
+s.add(4)
+&gt; {5,1,2,3,4}
+# 删除元素
+s.remove(4)
+&gt; {5,1,2,3}
+# 集合排序
+sorted(s)
+&gt; [1,2,3,5](排序后变成list)
+</code></pre></div></div>
+
+<h4 id="四字典dict操作方法">四、字典（dict）操作方法</h4>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>d = {'name':'jason','age':20,'gender':'male'}
+# 判断元素在不在集合内
+‘name' in d
+&gt; True
+'male' in d
+&gt; True
+# 索引键
+d['name']
+&gt; 'jason'
+# get(key, default) 函数进行索引。如果键不存在，调用get()函数可以返回一个默认值
+d.get('sex','null')
+&gt; 'null'
+# 增加元素
+d['dob'] = '1999-02-12'
+&gt; d = {'name':'jason','age':20,'gender':'male','dob':'1999-02-12'}
+# 更新键对应的值
+d['name'] = 'makes'
+&gt; d = {'name':'makes','age':20,'gender':'male'}
+# 删除键对应的值
+d.pop['name']
+&gt; d = {'age':20,'gender':'male'}
+# 根据字典键的升序排序
+d = {'b': 1, 'a': 2, 'c': 10}
+d_sorted_key = sorted(d.items(),key=lambda x:x[0])
+[('a',2),('b',1),('c',10)]
+# 根据字典值的升序排序
+d = {'b': 1, 'a': 2, 'c': 10}
+d_sorted_value = sorted(d.items(),key=lambda x:x[1])
+[('b',1),('a',2),('c',10)]
+</code></pre></div></div>
+:ET

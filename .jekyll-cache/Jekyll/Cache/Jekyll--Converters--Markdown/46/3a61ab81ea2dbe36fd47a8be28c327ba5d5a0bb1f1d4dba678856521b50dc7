@@ -1,0 +1,4 @@
+I"7<p>匿名函数的关键字是 lambda，之后是一系列的参数，然后用冒号隔开，最后则是由这些参数组成的表达式。</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lambda argument1, argument2,... argumentN : expression
+</code></pre></div></div>
+:ET

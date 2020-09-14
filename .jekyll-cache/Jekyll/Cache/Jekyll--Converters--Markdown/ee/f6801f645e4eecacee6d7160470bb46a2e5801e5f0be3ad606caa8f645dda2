@@ -1,0 +1,9 @@
+I"+<p>1、format 函数可以接受不限个参数，位置可以不按顺序。
+```</p>
+<h1 id="不设置指定位置按默认顺序">不设置指定位置，按默认顺序</h1>
+<p>”{} {}”.format(“hello”, “world”)
+输出结果：</p>
+<blockquote>
+  <p>‘hello world’</p>
+</blockquote>
+:ET

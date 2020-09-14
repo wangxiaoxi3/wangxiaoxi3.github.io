@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Icons -->
+    <link rel="shortcut icon" href="/public/image/favicon.ico"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Strive" /><style>
+        table{
+            border-left:1px solid #000000;border-top:1px solid #000000;
+            width: 100%;
+            word-wrap:break-word; word-break:break-all;
+        }
+        table th{
+            text-align:center;
+        }
+        table th,td{
+            border-right:1px solid #000000;border-bottom:1px solid #000000;
+        }
+    </style>
+</head>
+
+<style>@import url(/public/css/syntax/monokai.css);</style>
+  <title>Strive</title>
+  <!-- <link href="/public/css/bootstrap.min.css" rel="stylesheet"> -->
+
+  <link href="/public/css/style.css" rel="stylesheet">
+  <body>
+  	<div class="container"> 
+		<div class="sidebar">
+			<div class="sidebar-item sidebar-header">
+	<div class='sidebar-brand'>
+		<a href="/">Strive</a>
+	</div>
+	<p class="lead">走向测试开发❤️</p></div>
+
+<div class="sidebar-item sidebar-nav">
+	<ul class="nav">
+      <li class="nav-title">Pages</li>
+	  <li>
+	  	<a class="nav-item" href="/">Articles</a>
+	  </li>
+	  
+	  
+	    
+	  
+	    
+	      
+	        <li>
+	        	<a class="nav-item" href="/about/">
+	            	About
+	            </a>
+	        </li>
+	      
+	    
+	  
+	    
+	      
+	    
+	  
+	    
+	  
+	    
+	  
+	</ul>
+</div>
+
+<div class="sidebar-item sidebar-nav">
+  	<ul class="nav">
+			<li class="nav-title">Categories</li>
+	    
+	    <li>
+	    	<a class="nav-item" href="/category/#selenium">
+				<span class="name">selenium</span>
+				<span class="badge">2</span>
+	    	</a>
+ 		</li>
+	    
+	    <li>
+	    	<a class="nav-item" href="/category/#python">
+				<span class="name">python</span>
+				<span class="badge">12</span>
+	    	</a>
+ 		</li>
+	    
+	    <li>
+	    	<a class="nav-item" href="/category/#sql">
+				<span class="name">sql</span>
+				<span class="badge">2</span>
+	    	</a>
+ 		</li>
+	    
+	  </nav>
+	</ul>
+</div>
+
+<div class="sidebar-item sidebar-footer">
+	<p>Powered by <a href="https://github.com/jekyll/jekyll">Jekyll</a></p>
+</div>
+
+		</div>
+		<div class="content">
+			<article class="post">
+	<header class="post-header">
+		<div class="post-title"> 
+			Python-匿名函数
+		</div>
+		<time class="post-date dt-published" datetime="2020-09-14T13:30:00+08:00" itemprop="datePublished">2020/09/14
+		</time>		
+	</header>
+
+	<div class="post-content">
+		<p>匿名函数的关键字是 lambda，之后是一系列的参数，然后用冒号隔开，最后则是由这些参数组成的表达式。</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lambda argument1, argument2,... argumentN : expression
+</code></pre></div></div>
+
+<h4 id="第一lambda-是一个表达式expression并不是一个语句statement">第一:lambda 是一个表达式（expression），并不是一个语句（statement）。</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>square = lambda x: x**2
+square(3)
+运行结果：
+9
+</code></pre></div></div>
+<h4 id="第二lambda-的主体是只有一行的简单表达式并不能扩展成一个多行的代码块">第二:lambda 的主体是只有一行的简单表达式，并不能扩展成一个多行的代码块。</h4>
+<h4 id="第三为什么要使用匿名函数">第三:为什么要使用匿名函数？</h4>
+<ul>
+  <li>减少代码的重复性</li>
+  <li>模块化代码</li>
+</ul>
+
+
+	</div>
+</article>
+		</div>
+	</div>
+  </body>
+</html>

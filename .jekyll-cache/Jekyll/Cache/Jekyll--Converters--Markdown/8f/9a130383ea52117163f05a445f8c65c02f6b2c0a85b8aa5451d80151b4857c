@@ -1,0 +1,28 @@
+I"�<h3 id="一常用的匹配规则总结表">一、常用的匹配规则总结表</h3>
+<p>| 字符 | 说明 |
+| :—-: | :—-: |
+| <code class="highlighter-rouge">\w</code> 	| 匹配字母数字及下划线|
+| <code class="highlighter-rouge">\W</code>	| 匹配非字母数字及下划线|
+| <code class="highlighter-rouge">\s</code> 	| 匹配任意空白字符，等价于 [\t\n\r\f].|
+| <code class="highlighter-rouge">\S</code> 	| 匹配任意非空字符|
+| <code class="highlighter-rouge">\d</code> 	| 匹配任意数字，等价于 [0-9]|
+| <code class="highlighter-rouge">\D</code> 	| 匹配任意非数字|
+| <code class="highlighter-rouge">\A</code> 	| 匹配字符串开始|
+| <code class="highlighter-rouge">\Z</code> 	| 匹配字符串结束，如果是存在换行，只匹配到换行前的结束字符串|
+| <code class="highlighter-rouge">\z</code> 	| 匹配字符串结束|
+| <code class="highlighter-rouge">\G</code>	| 匹配最后匹配完成的位置|
+| <code class="highlighter-rouge">\n</code> 	| 匹配一个换行符|
+| <code class="highlighter-rouge">\t</code> 	| 匹配一个制表符|
+| <code class="highlighter-rouge">^</code>	| 匹配字符串的开头|
+| <code class="highlighter-rouge">$</code> 	| 匹配字符串的末尾|
+| <code class="highlighter-rouge">.</code> 	| 匹配任意字符，除了换行符|
+| <code class="highlighter-rouge">[...]</code> 	| 用来表示一组字符，单独列出：[amk] 匹配 ‘a’，’m’ 或 ‘k’|
+| <code class="highlighter-rouge">[^...]</code> 	| 不在 [] 中的字符：[^abc]匹配除了 a,b,c 之外的字符。|
+| <code class="highlighter-rouge">*</code> 	| 匹配 0 个或多个的表达式。|
+| <code class="highlighter-rouge">+</code> 	| 匹配 1 个或多个的表达式。|
+| <code class="highlighter-rouge">?</code> 	| 匹配 0 个或 1 个由前面的正则表达式定义的片段，非贪婪方式|
+| <code class="highlighter-rouge">{n}</code> 	| 精确匹配 n 个前面表达式。|
+| <code class="highlighter-rouge">{n, m}</code> 	| 匹配 n 到 m 次由前面的正则表达式定义的片段，贪婪方式|
+| a | b	| 匹配 a 或 b|
+| <code class="highlighter-rouge">( )</code> 		| 匹配括号内的表达式，也表示一个组|</p>
+:ET

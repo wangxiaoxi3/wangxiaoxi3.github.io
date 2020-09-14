@@ -1,0 +1,8 @@
+I"�<h3 id="1显示等待语法">1、显示等待语法</h3>
+<p>WebDriverWait(driver, timeout, poll_frequency, ignored_exceptions)</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>driver: 传入WebDriver实例，即webdriver.Chrome()
+timeout: 超时时间，等待的最长时间（同时要考虑隐性等待时间）
+poll_frequency: 调用until或until_not中的方法的间隔时间，默认是0.5秒
+ignored_exceptions: 忽略的异常，如果在调用until或until_not的过程中抛出这个元组中的异常， 则不中断代码，继续等待，如果抛出的是这个元组外的异常，则中断代码，抛出异常。默认只有NoSuchElementException
+</code></pre></div></div>
+:ET

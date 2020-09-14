@@ -1,0 +1,34 @@
+---
+layout: post
+title: MongoDB常用命令
+date: 2020-09-14 14:20:23 +0900
+category: sql
+---
+
+#### 1、常用的命令
+
+* show dbs 显示数据库列表
+* use dbname 进入dbname数据库，大小写敏感
+* show collections 显示数据库中的集合，相当于表格
+
+#### 2、创建&新增
+
+* db.users.save({“name”:”jack”}) 创建了名为users的集合，并新增了一条{“name”:”lecaf”}的数据
+* db.users.insert({“name”:”jack”, “age”:20}) 在users集合中插入一条新数据，如果没有users这个集合，mongodb会自动创建
+
+#### 3、删除
+
+* db.users.remove() 删除users集合下所有数据
+* db.users.remove({“name”:”jack”}) 删除users集合下name=jack的数据
+* db.users.drop()或db.runCommand({“drop”,”users”}) 删除集合users
+* db.runCommand({“dropDatabase”: 1}) 删除当前数据库
+
+#### 4、查找
+
+* db.users.find() 查找users集合中所有数据
+* db.users.findOne() 查找users集合中的第一条数据
+
+#### 5、修改
+
+* db.users.update({“name”:”jack”}, {“age”:50}) 修改name=jack的数据为age=50
+第一个参数是查找条件，第二个参数是修改内容，除了主键，其他内容会被第二个参数的内容替换，主键不能修改.

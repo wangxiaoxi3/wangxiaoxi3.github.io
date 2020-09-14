@@ -171,7 +171,11 @@ Python 自1.5版本起增加了re 模块，它提供 Perl 风格的正则表达�
 
 **1、re.compile(strPattern[, flag])**
 这个方法是Pattern类的工厂方法，用于将字符串形式的正则表达式编译为Pattern对象。 第二个参数flag是匹配模式，取值可以使用按位或运算符’|’表示同时生效，
-比如`re.I | re.M`。
+```
+import re
+pattern = 'I want world peace'
+re.compile('[a-z]',re.I|re.M)
+```
 
 **2、re.search(pattern, string[, flags]**
 这个方法用于查找字符串中可以匹配成功的子串。从string的pos下标处起尝试匹配pattern，如果pattern结束时仍可匹配，则返回一个Match对象；若无法匹配，则将pos加1后重新尝试匹配；直到pos=endpos时仍无法匹配则返回None。pos和endpos的默认值分别为0和len(string))；re.search()无法指定这两个参数，参数flags用于编译pattern时指定匹配模式。
