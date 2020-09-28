@@ -1,0 +1,68 @@
+---
+layout: post
+title: SQL多表查询
+date: 2020-09-28 14:20:23 +0900
+category: sql
+---
+
+一、 UNION 操作符用于合并两个或多个 SELECT 语句的结果集。
+```
+# union 筛选不同值
+SELECT ID,Name FROM Students
+UNION
+SELECT ID,Name FROM Teachers
+```
+
+```
+# union all 保留所有值
+SELECT Name FROM Students
+UNION ALL
+SELECT Name FROM Teachers
+```
+
+二、 INNER JOIN（内连接），根据两个或多个表中的列之间的关系，从这些表中查询数据。
+```
+SELECT Students.ID,Students.Name,Majors.Name AS MajorName
+FROM Students INNER JOIN Majors
+ON Students.MajorID = Majors.ID
+```
+
+三、外连接分为三种：左外连接，右外连接，全外连接。
+对应SQL：LEFT/RIGHT/FULL OUTER JOIN。
+```
+结果集保留左表的所有行，但只包含第二个表与第一表匹配的行。第二个表相应的空行被放入NULL值。
+SELECT Students.ID,Students.Name,Majors.Name AS MajorName
+FROM Students LEFT JOIN Majors
+ON Students.MajorID = Majors.ID
+```
+
+|Students.ID|Students.Name|Majors.Name|
+| :----: | :----: | :----: |
+|1|Joye|Yel|
+|2|Emiy|NULL|
+
+```
+右外连接保留了第二个表的所有行，但只包含第一个表与第二个表匹配的行。第一个表相应空行被入NULL值。
+SELECT Students.ID,Students.Name,Majors.Name AS MajorName
+FROM Students RIGHT JOIN Majors
+ON Students.MajorID = Majors.ID
+```
+
+|Students.ID|Students.Name|Majors.Name|
+| :----: | :----: | :----: |
+|1|Joye|Yel|
+|NULL|NULL|Pidy|
+
+```
+会把两个表所有的行都显示在结果表中
+SELECT Students.ID,Students.Name,Majors.Name AS MajorName
+FROM Students FULL JOIN Majors
+ON Students.MajorID = Majors.ID
+```
+
+|Students.ID|Students.Name|Majors.Name|
+| :----: | :----: | :----: |
+|1|Joye|Yel|
+|3|Wuie|Lue|
+
+
