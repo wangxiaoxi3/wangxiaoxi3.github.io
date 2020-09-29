@@ -1,0 +1,151 @@
+I"+<ul>
+  <li>
+    <p>显示数据库
+–&gt; <strong>show databases;</strong></p>
+  </li>
+  <li>
+    <p>判断是否存在数据库test_mysql,有的话先删除
+–&gt; <strong>drop database if exists test_mysql;</strong></p>
+  </li>
+  <li>
+    <p>创建数据库
+–&gt; <strong>create database test_mysql;</strong></p>
+  </li>
+  <li>
+    <p>删除数据库
+–&gt; <strong>drop database test_mysql;</strong></p>
+  </li>
+  <li>
+    <p>使用该数据库
+–&gt; <strong>use test_mysql;</strong></p>
+  </li>
+  <li>
+    <p>显示数据库中的表
+–&gt; <strong>show tables;</strong></p>
+  </li>
+  <li>
+    <p>先判断表是否存在,存在先删除
+–&gt; <strong>drop table if exists student;</strong></p>
+  </li>
+  <li>
+    <p>删除表
+–&gt; <strong>drop table student;</strong></p>
+  </li>
+  <li>
+    <p>查看表的结构
+–&gt; <strong>des student;</strong></p>
+  </li>
+  <li>创建表
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>create table student(
+id int auto_increment primary key,
+name varchar(50),
+sex varchar(20),
+date varchar(50),
+)default charset=utf8;
+</code></pre></div>    </div>
+  </li>
+  <li>插入数据
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>insert into student values(null,'test','2018-10-2');
+</code></pre></div>    </div>
+  </li>
+  <li>查询表中的数据
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>select * from student;
+select id,name from student;
+</code></pre></div>    </div>
+  </li>
+  <li>修改某一条数据
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>update student set name='jack' where id=4;
+</code></pre></div>    </div>
+  </li>
+  <li>删除数据
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>delete from student where id=8;
+</code></pre></div>    </div>
+  </li>
+  <li>and 且
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>select * from student where date&gt;'2018-1-2' and date&lt;'2018-12-1';
+</code></pre></div>    </div>
+  </li>
+  <li>or 或
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>select * from student where date&lt;'2018-11-2' or date&gt;'2018-12-1';
+</code></pre></div>    </div>
+  </li>
+  <li>between
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>select * from student where date between '2018-1-2' and '2018-12-1';
+</code></pre></div>    </div>
+  </li>
+  <li>in 查询制定集合内的数据
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>select * from student where id in (1,3,5);
+</code></pre></div>    </div>
+  </li>
+  <li>排序-<strong>asc升序\desc降序</strong>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>select * from student order by id asc;
+</code></pre></div>    </div>
+  </li>
+  <li>分组查询-聚合函数
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>select max(id),name,sex from student group by sex;
+select min(date) from student;
+select avg(id) as 'Avg' from student;
+select count(*) from student;   #统计表中总数
+select count(sex) from student;   #统计表中性别总数
+</code></pre></div>    </div>
+  </li>
+  <li>若有一条数据中sex为空的话,就不予以统计
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>select sum(id) from student;
+</code></pre></div>    </div>
+  </li>
+  <li>查询第i条以后到第j条的数据(不包括第i条)
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>select * from student limit 2,5;  #显示3-5条数据
+</code></pre></div>    </div>
+  </li>
+  <li>修改数据
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>update student set name='test' where id=2;
+update student set name='花花',sex='女' where id=2
+delete from student where id=2;
+</code></pre></div>    </div>
+  </li>
+  <li>修改表的名字
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>alter table tbl_name rename to new_name
+alter table student rename to test_1;
+</code></pre></div>    </div>
+  </li>
+  <li>向表中增加一个字段(列)
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>alter table tablename add columnname type;/alter table tablename add(columnname type);
+alter table student add  age varchar(20) set default '1'; #set default 设置默认值
+</code></pre></div>    </div>
+  </li>
+  <li>修改表中某个字段的名字
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>alter table tablename change columnname newcolumnname type;
+</code></pre></div>    </div>
+  </li>
+  <li>修改一个表的字段名
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>alter table student change name test_name varchar(50);
+</code></pre></div>    </div>
+  </li>
+  <li>去掉表中字段age的默认值
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>alter table student alter age drop default;
+</code></pre></div>    </div>
+  </li>
+  <li>去掉表中字段age
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>alter table student drop column age;
+</code></pre></div>    </div>
+  </li>
+  <li>删除表中主键
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>alter table student drop primary key;
+</code></pre></div>    </div>
+  </li>
+  <li>表中增加主键
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>alter table add primary key (column1,column2,....,column)
+alter table student add primary key (student_id);
+</code></pre></div>    </div>
+  </li>
+  <li>用文本方式将数据装入数据库表中（例如D:/mysql.txt）
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>load data local infile "D:/mysql.txt" into table MYTABLE;
+</code></pre></div>    </div>
+  </li>
+  <li>导入.sql文件命令（例如D:/mysql.sql）
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>source d:/mysql.sql;  #或者  /. d:/mysql.sql;
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+:ET

@@ -1,0 +1,119 @@
+I"G<p>显示数据库<br />
+<code class="highlighter-rouge">show databases;</code></p>
+
+<p>判断是否存在数据库test_mysql,有的话先删除
+<code class="highlighter-rouge">drop database if exists test_mysql;</code></p>
+
+<p>创建数据库
+<code class="highlighter-rouge">create database test_mysql;</code></p>
+
+<p>删除数据库
+<code class="highlighter-rouge">drop database test_mysql;</code></p>
+
+<p>使用该数据库
+<code class="highlighter-rouge">use test_mysql;</code></p>
+
+<p>显示数据库中的表
+<code class="highlighter-rouge">show tables;</code></p>
+
+<p>先判断表是否存在,存在先删除
+<code class="highlighter-rouge">drop table if exists student;</code></p>
+
+<p>创建表</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>create table student(
+id int auto_increment primary key,
+name varchar(50),
+sex varchar(20),
+date varchar(50),
+)default charset=utf8;
+</code></pre></div></div>
+
+<p>删除表
+<code class="highlighter-rouge">drop table student;</code></p>
+
+<p>查看表的结构
+<code class="highlighter-rouge">describe student;  #可以简写为desc student;</code></p>
+
+<p>插入数据
+<code class="highlighter-rouge">insert into student values(null,'test','2018-10-2');</code></p>
+
+<p>查询表中的数据
+<code class="highlighter-rouge">select * from student;</code>
+<code class="highlighter-rouge">select id,name from student;</code></p>
+
+<p>修改某一条数据
+<code class="highlighter-rouge">update student set name='jack' where id=4;</code></p>
+
+<p>删除数据
+<code class="highlighter-rouge">delete from student where id=8;</code></p>
+
+<p>and 且
+<code class="highlighter-rouge">select * from student where date&gt;'2018-1-2' and date&lt;'2018-12-1';</code></p>
+
+<p>or 或
+<code class="highlighter-rouge">select * from student where date&lt;'2018-11-2' or date&gt;'2018-12-1';</code></p>
+
+<p>between
+<code class="highlighter-rouge">select * from student where date between '2018-1-2' and '2018-12-1';</code></p>
+
+<p>in 查询制定集合内的数据
+<code class="highlighter-rouge">select * from student where id in (1,3,5);</code></p>
+
+<p>排序<code class="highlighter-rouge"> asc 升序  desc 降序</code>
+<code class="highlighter-rouge">select * from student order by id asc;</code></p>
+
+<p>分组查询 聚合函数
+<code class="highlighter-rouge">select max(id),name,sex from student group by sex;</code></p>
+
+<p><code class="highlighter-rouge">select min(date) from student;</code></p>
+
+<p><code class="highlighter-rouge">select avg(id) as 'Avg' from student;</code></p>
+
+<p><code class="highlighter-rouge">select count(*) from student;   #统计表中总数</code></p>
+
+<p><code class="highlighter-rouge">select count(sex) from student;   #统计表中性别总数  </code>
+若有一条数据中sex为空的话,就不予以统计~</p>
+
+<p><code class="highlighter-rouge">select sum(id) from student;</code></p>
+
+<p>查询第i条以后到第j条的数据(不包括第i条)
+<code class="highlighter-rouge">select * from student limit 2,5;  #显示3-5条数据</code></p>
+
+<p>修改数据
+<code class="highlighter-rouge">update student set name='test' where id=2;</code>
+<code class="highlighter-rouge">update student set name='花花',sex='女' where id=2</code>
+<code class="highlighter-rouge">delete from student where id=2;</code></p>
+
+<p>修改表的名字
+<code class="highlighter-rouge">alter table tbl_name rename to new_name</code>
+<code class="highlighter-rouge">alter table student rename to test_1;</code></p>
+
+<p>向表中增加一个字段(列)
+<code class="highlighter-rouge">alter table tablename add columnname type;/alter table tablename add(columnname type);</code>
+<code class="highlighter-rouge">alter table student add  age varchar(20) set default '1'; #set default 设置默认值</code></p>
+
+<p>修改表中某个字段的名字
+<code class="highlighter-rouge">alter table tablename change columnname newcolumnname type;  </code>
+修改一个表的字段名
+<code class="highlighter-rouge">alter table student change name test_name varchar(50);</code></p>
+
+<p>去掉表中字段age的默认值
+<code class="highlighter-rouge">alter table student alter age drop default;</code></p>
+
+<p>去掉表中字段age
+<code class="highlighter-rouge">alter table student drop column age;</code></p>
+
+<p>删除表中主键
+<code class="highlighter-rouge">alter table student drop primary key;</code></p>
+
+<p>表中增加主键
+<code class="highlighter-rouge">alter table add primary key (column1,column2,....,column)</code>
+<code class="highlighter-rouge">alter table student add primary key (student_id);</code></p>
+
+<p>用文本方式将数据装入数据库表中（例如D:/mysql.txt）
+<code class="highlighter-rouge">load data local infile "D:/mysql.txt" into table MYTABLE;</code></p>
+
+<p>导入.sql文件命令（例如D:/mysql.sql）
+<code class="highlighter-rouge">source d:/mysql.sql;  #或者  /. d:/mysql.sql;</code></p>
+
+:ET

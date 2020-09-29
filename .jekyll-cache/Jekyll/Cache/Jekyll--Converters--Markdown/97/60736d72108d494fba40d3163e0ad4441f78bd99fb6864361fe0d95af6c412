@@ -1,0 +1,39 @@
+I"�<h3 id="简介">简介</h3>
+<p><a href="https://github.com/didi/AgileTC">AgileTC</a>是一套敏捷的测试用例管理平台，支持测试用例管理、执行计划管理、进度计算、多人实时协同等能力，方便测试人员对用例进行管理和沉淀。产品以脑图方式编辑可快速上手，用例关联需求形成流程闭环，并支持组件化引用，可在各个平台嵌入使用，是测试人员的贴心助手！</p>
+
+<h3 id="环境依赖">环境依赖</h3>
+<ul>
+  <li>Mac/Linux/Windows </li>
+  <li>Java 1.8 </li>
+  <li>Mysql 服务端 </li>
+  <li>Maven</li>
+</ul>
+
+<h3 id="安装使用">安装使用</h3>
+<p>1、下载源码
+git clone https://github.com/didi/AgileTC.git </p>
+
+<p>2、创建依赖数据库，默认数据库名为：case_manager 
+执行sql:  <code class="highlighter-rouge">create database case_manager </code></p>
+
+<p>3、创建对应数据表，执行sql文件：<code class="highlighter-rouge">/AgileTC/case-server/sql/case-server.sql </code></p>
+
+<p>4、修改<code class="highlighter-rouge">/AgileTC/case-server/src/main/resourcesapplication-dev.properties中spring.datasource</code>的配置</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#修改对应数据库中端口，数据库名称
+spring.datasource.url=jdbc:mysql://127.0.0.1:33306/case_manager?useSSL=false&amp;useUnicode=true&amp;characterEncoding=utf8
+#修改对应数据库中用户名
+spring.datasource.username=root
+#修改对应数据库中密码
+spring.datasource.password=123456
+</code></pre></div></div>
+
+<p>5、安装xmind.jar包,进入文件夹<code class="highlighter-rouge">/AgileTC/case-server</code>,执行mvn安装命令</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> mvn install:install-file -Dfile=org.xmind.core_3.5.2.201505201101.jar
+-DgroupId=com.xmind -DartifactId=sdk-Java -Dversion=201505201101
+-Dpackaging=jar
+</code></pre></div></div>
+
+<p>6、进入文件夹<code class="highlighter-rouge">/AgileTC/case-server</code>，执行运行命令：<code class="highlighter-rouge">mvn spring-boot:run </code></p>
+
+<p>7、运行成功，进入页面：<a href="http://localhost:8094/case/caseList/1">http://localhost:8094/case/caseList/1</a></p>
+:ET

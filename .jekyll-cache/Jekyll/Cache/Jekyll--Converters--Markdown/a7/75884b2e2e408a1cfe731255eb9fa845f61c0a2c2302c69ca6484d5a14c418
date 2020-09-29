@@ -1,0 +1,106 @@
+I"J<p>一、 UNION 操作符用于合并两个或多个 SELECT 语句的结果集。</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># union 筛选不同值
+SELECT ID,Name FROM Students
+UNION
+SELECT ID,Name FROM Teachers
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># union all 保留所有值
+SELECT Name FROM Students
+UNION ALL
+SELECT Name FROM Teachers
+</code></pre></div></div>
+
+<p>二、 INNER JOIN（内连接），根据两个或多个表中的列之间的关系，从这些表中查询数据。</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SELECT Students.ID,Students.Name,Majors.Name AS MajorName
+FROM Students INNER JOIN Majors
+ON Students.MajorID = Majors.ID
+</code></pre></div></div>
+
+<p>三、外连接分为三种：左外连接，右外连接，全外连接。
+对应SQL：LEFT/RIGHT/FULL OUTER JOIN。</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>结果集保留左表的所有行，但只包含第二个表与第一表匹配的行。第二个表相应的空行被放入NULL值。
+SELECT Students.ID,Students.Name,Majors.Name AS MajorName
+FROM Students LEFT JOIN Majors
+ON Students.MajorID = Majors.ID
+</code></pre></div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Students.ID</th>
+      <th style="text-align: center">Students.Name</th>
+      <th style="text-align: center">Majors.Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">Joye</td>
+      <td style="text-align: center">Yel</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">2</td>
+      <td style="text-align: center">Emiy</td>
+      <td style="text-align: center">NULL</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>右外连接保留了第二个表的所有行，但只包含第一个表与第二个表匹配的行。第一个表相应空行被入NULL值。
+SELECT Students.ID,Students.Name,Majors.Name AS MajorName
+FROM Students RIGHT JOIN Majors
+ON Students.MajorID = Majors.ID
+</code></pre></div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Students.ID</th>
+      <th style="text-align: center">Students.Name</th>
+      <th style="text-align: center">Majors.Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">Joye</td>
+      <td style="text-align: center">Yel</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">NULL</td>
+      <td style="text-align: center">NULL</td>
+      <td style="text-align: center">Pidy</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>会把两个表所有的行都显示在结果表中
+SELECT Students.ID,Students.Name,Majors.Name AS MajorName
+FROM Students FULL JOIN Majors
+ON Students.MajorID = Majors.ID
+</code></pre></div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Students.ID</th>
+      <th style="text-align: center">Students.Name</th>
+      <th style="text-align: center">Majors.Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">Joye</td>
+      <td style="text-align: center">Yel</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">3</td>
+      <td style="text-align: center">Wuie</td>
+      <td style="text-align: center">Lue</td>
+    </tr>
+  </tbody>
+</table>
+
+:ET

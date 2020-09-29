@@ -1,0 +1,7 @@
+I"<p>一、 UNION 操作符用于合并两个或多个 SELECT 语句的结果集。</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># union 筛选不同值
+SELECT ID,Name FROM Students
+UNION
+SELECT ID,Name FROM Teachers
+</code></pre></div></div>
+:ET

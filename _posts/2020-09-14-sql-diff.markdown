@@ -58,6 +58,6 @@ MySQL与MongoDB都是开源的常用数据库，但是MySQL是传统的关系型
 
 ### 四、对比
 
-![image](/public/image/sql-diff.png)
+![image](/assets/img/cc/sql-diff.png)
 
 

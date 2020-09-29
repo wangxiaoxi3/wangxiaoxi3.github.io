@@ -66,7 +66,7 @@ print('我是{}, 我怕{weapon}。'.format(*hulk, **captain))
 `b`、`d`、`o`、`x`分别是二进制、十进制、八进制、十六进制。
 ```
 
-![format](/public/image/python-format-1.png)
+![format](/assets/img/cc/python-format-1.png)
 
 
 ---

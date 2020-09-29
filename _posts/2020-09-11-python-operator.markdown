@@ -6,15 +6,15 @@ categories: python
 ---
 #### 1、Python算术运算符
 以下假设变量a为10，变量b为21：
-![image1](/public/image/operator-1.png)
+![image1](/assets/img/cc/operator-1.png)
 
 #### 2、Python比较运算符
 以下假设变量a为10，变量b为20：
-![image2](/public/image/operator-2.png)
+![image2](/assets/img/cc/operator-2.png)
 
 #### 3、赋值运算符
 以下假设变量a为10，变量b为20：
-![image3](/public/image/operator-3.png)
+![image3](/assets/img/cc/operator-3.png)
 
 #### 4、Python位运算符
 按位运算符是把数字看作二进制来进行计算的。Python中的按位运算法则如下：
@@ -35,7 +35,7 @@ a^b = 0011 0001
 ~a  = 1100 0011
 ```
 
-![image4](/public/image/operator-4.png)
+![image4](/assets/img/cc/operator-4.png)
 
 ---
 以上，对你有帮助的话，点赞❤️吧～～
