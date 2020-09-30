@@ -2,7 +2,8 @@
 layout: post
 title: SQL多表查询
 date: 2020-09-28 14:20:23 +0900
-category: sql
+category: 数据库
+tag: Sql
 ---
 
 一、 UNION 操作符用于合并两个或多个 SELECT 语句的结果集。

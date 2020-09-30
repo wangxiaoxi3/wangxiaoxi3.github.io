@@ -2,8 +2,8 @@
 layout: post
 title: Mac搭建Selenium+ChromeDriver
 date: 2020-09-11 14:20:23 +0900
-category: selenium
-tag: selenium
+category: Selenium
+tag: ChromeDriver
 ---
 ### 一、安装Selenium
 selenium可以直接用pip安装:   `pip3 install selenium`

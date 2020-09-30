@@ -2,8 +2,8 @@
 layout: post
 title: APP启动时间
 date: 2020-09-29 14:20:23 +0900
-category: android
-tag: android专项测试
+category: Android
+tag: Android专项测试
 ---
 ### 一、adb shell 命令查看
 

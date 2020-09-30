@@ -2,8 +2,8 @@
 layout: post
 title: Selenium-显示等待方法
 date: 2020-09-14 14:20:23 +0900
-category: selenium
-tag: selenium
+category: Selenium
+tag: Selenium
 ---
 
 ### 1、显示等待语法

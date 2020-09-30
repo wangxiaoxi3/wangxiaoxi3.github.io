@@ -2,7 +2,7 @@
 layout: post
 title: Python-异常总结
 date: 2020-09-14 14:30:00 +0900
-categories: python
+categories: Python
 ---
 
 ### 一、常见异常总结

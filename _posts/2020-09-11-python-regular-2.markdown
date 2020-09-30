@@ -2,7 +2,8 @@
 layout: post
 title: Python-正则表达式二
 date: 2020-09-11 14:30:00 +0900
-categories: python
+categories: Python
+tag: 正则表达式
 ---
 
 ### 一、常用的匹配规则总结表

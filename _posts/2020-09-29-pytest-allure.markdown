@@ -2,7 +2,7 @@
 layout: post
 title:  Pytest+Allure定制报告
 date: 2020-09-29 17:30:00 +0900
-categories: python
+categories: Python
 tag: Allure
 ---
 

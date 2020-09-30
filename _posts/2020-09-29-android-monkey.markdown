@@ -2,7 +2,7 @@
 layout: post
 title: Monkey命令
 date: 2020-09-29 15:20:23 +0900
-category: android
+category: Android
 tag: Monkey
 ---
 # Monkey相关指令

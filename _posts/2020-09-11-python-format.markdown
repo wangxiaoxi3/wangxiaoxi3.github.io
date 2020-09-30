@@ -2,7 +2,7 @@
 layout: post
 title: Python-format格式化函数
 date: 2020-09-11 14:30:00 +0900
-categories: python
+categories: Python
 ---
 1、format 函数可以接受不限个参数，位置可以不按顺序。
 ```

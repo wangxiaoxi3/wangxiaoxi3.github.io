@@ -2,7 +2,8 @@
 layout: post
 title: Mac下安装AgileTC
 date: 2020-09-28 14:20:23 +0900
-category: java
+category: Java
+tag: 用例管理平台
 ---
 
 ### 简介

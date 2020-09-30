@@ -2,8 +2,8 @@
 layout: post
 title: Adb命令
 date: 2020-09-29 15:20:23 +0900
-category: android
-tag: adb
+category: Android
+tag: Adb
 ---
 #### 查看设备列表
 

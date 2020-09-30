@@ -2,8 +2,8 @@
 layout: post
 title: 获取App系统资源
 date: 2020-09-29 14:20:23 +0900
-category: android
-tag: android专项测试
+category: Android
+tag: Android专项测试
 ---
 ### 1、获取Top信息
 `adb shell top  | grep {package_name}`

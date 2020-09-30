@@ -2,7 +2,7 @@
 layout: post
 title: Python-列表与元组
 date: 2020-09-14 14:30:00 +0900
-categories: python
+categories: Python
 ---
 Python 中最常见的两种数据结构：列表（list）和元组（tuple）
 
