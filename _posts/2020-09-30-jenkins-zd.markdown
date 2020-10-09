@@ -2,7 +2,7 @@
 layout: post
 title: Jenkins - 构建自动化任务
 date: 2020-09-30 10:30:00 +0900
-categories: Jenkins
+category: Jenkins
 tag: 持续集成
 ---
 ## 前言：

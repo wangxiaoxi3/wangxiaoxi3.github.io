@@ -2,7 +2,7 @@
 layout: post
 title: Python-匿名函数
 date: 2020-09-14 14:30:00 +0900
-categories: Python
+category: Python
 ---
 
 匿名函数的关键字是 lambda，之后是一系列的参数，然后用冒号隔开，最后则是由这些参数组成的表达式。

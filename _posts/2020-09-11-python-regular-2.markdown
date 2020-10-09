@@ -2,7 +2,7 @@
 layout: post
 title: Python-正则表达式二
 date: 2020-09-11 14:30:00 +0900
-categories: Python
+category: Python
 tag: 正则表达式
 ---
 

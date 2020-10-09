@@ -2,7 +2,7 @@
 layout: post
 title: Python-字典与序列
 date: 2020-09-14 14:30:00 +0900
-categories: Python
+category: Python
 ---
 #### 一、集合（set）和字典（dict）区别：
 1、字典是一系列由键key和值value配对组成的元素的集合，在python3.7+，字典被确定为有序。3.6之前是无序的，其长度大小可变，元素可以任意的删减和改变。

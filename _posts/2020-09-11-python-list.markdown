@@ -2,7 +2,7 @@
 layout: post
 title: Python-List操作
 date: 2020-09-11 14:30:00 +0900
-categories: Python
+category: Python
 ---
 # 前言：
 序列是Python中最基本的数据结构。序列中的每个元素都分配一个数字 - 它的位置，或索引，第一个索引是0，第二个索引是1，依此类推。

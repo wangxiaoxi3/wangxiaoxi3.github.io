@@ -1,0 +1,44 @@
+---
+layout: post
+title: Ngrok内网穿透教程
+date: 2020-10-09 10:30:00 +0900
+category: Ngrok
+tag: 内网穿透
+---
+## 前言：
+[Ngrok](https://ngrok.com/)是一个反向代理，通过在公共的端点和本地运行的Web服务器之间建立一个安全的通道。
+Ngrok可捕获和分析所有通道上的流量，便于后期分析和重放。
+
+---
+
+## 环境配置
+1、进入Ngrok官网（https://ngrok.com/），注册Ngrok账号并下载Ngrok；\
+2、解压zip文件，并进入解压文件夹；\
+3、根据官网给定的授权码，运行如下授权命令；
+```
+./ngrok authtoken 1iclsessionsessionsessionsessionsessionL1LTo3H
+```
+授权码和账户是绑定的，在授权命令运行后，ngrok会将授权码保存在~/.ngrok2/ngrok.yml中，所以只需要运行一次，以后都可以使用。\
+4、根据需要，运行命令开发端口，示例中端口为1314。
+```
+ngrok http 1314
+```
+需要注意的是，这里的端口1314可以根据需要替换成其他端口。这条命令的意思是将本地1314端口对应的服务暴露到外网中。
+运行后出现如下结果：
+```
+ngrok by @inconshreveable                                               (Ctrl+C to quit)
+
+Session Status                online
+Account                       xiaoxi (Plan: Free)
+Version                       2.3.35
+Region                        United States (us)
+Web Interface                 http://127.0.0.1:4040
+Forwarding                    http://c9a250abdffa.ngrok.io -> http://localhost:1314
+Forwarding                    https://c9a250abdffa.ngrok.io -> http://localhost:1314
+
+Connections                   ttl     opn     rt1     rt5     p50     p90
+                              26      0       0.00    0.00    0.24    59.94
+
+```
+Forwarding中第一个是http协议对应的外网地址，第二个是https协议对应的外网地址。\
+这样，凡是访问http://c9a250abdffa.ngrok.io的请求都将发送到localhost:1314。

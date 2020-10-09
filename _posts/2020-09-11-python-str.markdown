@@ -2,7 +2,7 @@
 layout: post
 title: Python-字符串
 date: 2020-09-11 14:30:00 +0900
-categories: Python
+category: Python
 ---
 # Python - 字符串
 #### 一、单引号、双引号、三引号区别

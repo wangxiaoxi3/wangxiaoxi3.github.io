@@ -2,7 +2,7 @@
 layout: post
 title: Python-正则表达式一
 date: 2020-09-11 14:30:00 +0900
-categories: Python
+category: Python
 tag: 正则表达式
 ---
 ## 一、简单介绍-[在线正则表达式测试工具](http://tool.oschina.net/regex/)

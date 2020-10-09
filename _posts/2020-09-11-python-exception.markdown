@@ -2,7 +2,7 @@
 layout: post
 title: Python-异常处理
 date: 2020-09-11 14:30:00 +0900
-categories: Python
+category: Python
 ---
 ### 一、常见异常总结
 * BaseException     所有异常的基类

@@ -2,7 +2,7 @@
 layout: post
 title: Jenkins - 构建Allure Report
 date: 2020-09-30 10:30:00 +0900
-categories: Jenkins
+category: Jenkins
 tag: Jenkins
 ---
 

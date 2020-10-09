@@ -2,7 +2,7 @@
 layout: post
 title: Docker常用命令
 date: 2020-09-30 10:30:00 +0900
-categories: Docker
+category: Docker
 ---
 
 #### 一、镜像管理命令

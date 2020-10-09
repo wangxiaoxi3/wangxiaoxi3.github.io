@@ -2,7 +2,7 @@
 layout: post
 title: Python-运算符
 date: 2020-09-11 14:30:00 +0900
-categories: Python
+category: Python
 ---
 #### 1、Python算术运算符
 以下假设变量a为10，变量b为21：
