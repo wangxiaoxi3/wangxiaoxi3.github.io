@@ -10,7 +10,7 @@
 
 title: Xiaoxi'blog                          # the main title
 
-tagline: 一个勤勤恳恳做测试的软妹纸~~  # it will display as the sub-title
+tagline: 一个勤勤恳恳做测试的软妹纸  # it will display as the sub-title
 
 description: >-                        # used by seo meta and the atom feed
   A minimal, portfolio, sidebar,
@@ -27,16 +27,16 @@ avatar: /assets/img/sample/xiaoxi.png   # support internet resources
 github:
   username: wangxiaoxi3             # change to your github username
 
-#twitter:
-#  username: wangxiaoxi            # change to your twitter username
+blogger:
+  username: xiaoxi-3-            # change to your twitter username
 
 social:
   name: wangxiaoxi                  # it will shows as the copyright owner in Footer
   email: wangxiaoxi1213@163.com             # change to your email address
   links:
     # The first element serves as the copyright owner's link
-    - https://www.jianshu.com/u/da1677475c27    # change to your twitter homepage
-    - https://github.com/wangxiaoxi3      # change to your github homepage
+    - https://github.com/wangxiaoxi3     # change to your blog homepage
+    - https://www.cnblogs.com/xiaoxi-3-      # change to your github homepage
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
     # - https://www.linkedin.com/in/username

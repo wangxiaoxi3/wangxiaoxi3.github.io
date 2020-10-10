@@ -68,13 +68,13 @@
     {% capture url %}
       {%- if entry.type == 'github' -%}
         https://github.com/{{ site.github.username }}
-      {%- elsif entry.type == 'twitter' -%}
-        https://www.jianshu.com/u/da1677475c27
+      {%- elsif entry.type == 'blogger' -%}
+        https://www.cnblogs.com/{{ site.blogger.username }}
       {%- elsif entry.type == 'email' -%}
         {% assign email = site.social.email | split: '@' %}
         javascript:window.open('mailto:' + ['{{ email[0] }}','{{ email[1] }}'].join('@'))
       {%- elsif entry.type == 'rss' -%}
-        {{ "/feed.xml" | relative_url }}
+        https://wangxiaoxi.cn/tabs/about/
       {%- else -%}
         {{ entry.url }}
       {%- endif -%}
