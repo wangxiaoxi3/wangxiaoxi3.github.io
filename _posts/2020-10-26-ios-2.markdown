@@ -1,0 +1,77 @@
+---
+layout: post
+title: iOS-libimobiledevice命令
+date: 2020-10-26 15:30:00 +0900
+category: IOS
+tag: libimobiledevice
+---
+## 简介
+A library to communicate with services of Apple iOS devices using native
+protocols.
+----
+1、打印app列表
+```
+ideviceinstaller -l
+```
+2、查看当前已连接的设备的UUID
+```
+idevice_id -l
+```
+3、获取设备信息
+```
+ideviceinfo
+```
+4、获取设备时间
+```
+idevicedate
+```
+5、重启设备
+```
+idevicediagnostics restart
+```
+6、安装ipa包，卸载应用
+```
+ideviceinstaller -i xxx.ipa
+//命令安装一个ipa文件到手机上，如果是企业签名的，非越狱机器也可以直接安装了。
+
+ideviceinstaller -U [bundleID]
+//命令卸载应用，需要知道此应用的bundleID
+```
+7、查看系统日志
+```
+idevicesyslog
+//屏幕上即可看见手机上所有的日志
+
+idevicesyslog >> iphone.log &
+//该命令是将日志导入到iphone.log这个文件，并且是在后台执行。
+//然后用tail -f和grep查看log
+
+tail -f iphone.log
+tail -f iphone.log | grep 'WeChat’  # 查看包含WeChat的行
+```
+8、截图
+```
+idevicescreenshot
+//如果在使用截图的时候出现报错信息，那么就去把相应版本的DeveloperDiskImage的两个文件复制到libimobiledevice文件下面。
+
+路径：
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/DeviceSupport/对应版本/
+
+获取版本号命令：
+ideviceinfo -k ProductVersion
+
+安装DeveloperDiskImage命令：
+ideviceimagemounter DeveloperDiskImage.dmg
+//然后就可以正常截图了
+
+```
+9、 遇到报错
+```
+解决方法：卸载重装
+brew uninstall ideviceinstaller
+brew uninstall libimobiledevice
+brew install --HEAD libimobiledevice
+brew install ideviceinstaller
+```
+---
+以上

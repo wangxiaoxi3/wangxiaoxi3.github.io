@@ -1,0 +1,89 @@
+---
+layout: post
+title: Mac安装STF-踩坑记录
+date: 2020-10-26 15:30:00 +0900
+category: APP
+tag: STF
+---
+
+### 一、 STF安装
+1、STF官网：
+https://github.com/openstf/stf
+2、安装依赖：
+`brew install rethinkdb graphicsmagick zeromq protobuf yasm pkg-config`
+3、安装STF：
+`npm install -g stf`
+
+### 二、环境依赖
+1、npm及node版本(`node.js最好为8.X系列`)
+```
+$ npm version
+{ wangjuan: '1.0.0',
+  npm: '5.5.1',
+  ares: '1.10.1-DEV',
+  cldr: '31.0.1',
+  http_parser: '2.7.0',
+  icu: '59.1',
+  modules: '57',
+  nghttp2: '1.25.0',
+  node: '8.9.1',
+  openssl: '1.0.2m',
+  tz: '2017b',
+  unicode: '9.0',
+  uv: '1.15.0',
+  v8: '6.1.534.47',
+  zlib: '1.2.11' }
+```
+2、 [RethinkDB](http://rethinkdb.com/) >= 2.2
+3、不支持windows
+
+### 三、常见问题
+1、提示bufferutil包错误，报错信息如下：
+```
+16959 verbose stack Error: bufferutil@1.3.0 install: `node-gyp rebuild`
+16959 verbose stack Exit status 1
+16959 verbose stack     at EventEmitter.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-lifecycle/index.js:301:16)
+16959 verbose stack     at EventEmitter.emit (events.js:182:13)
+16959 verbose stack     at ChildProcess.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-lifecycle/lib/spawn.js:55:14)
+16959 verbose stack     at ChildProcess.emit (events.js:182:13)
+16959 verbose stack     at maybeClose (internal/child_process.js:962:16)
+16959 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:251:5)
+16960 verbose pkgid bufferutil@1.3.0
+16961 verbose cwd /Users/wangjuan
+16962 verbose Darwin 18.2.0
+16963 verbose argv "/usr/local/bin/node" "/usr/local/bin/npm" "install" "stf" "-g" "--unsafe-perm"
+16964 verbose node v10.13.0
+16965 verbose npm  v6.4.1
+16966 error code ELIFECYCLE
+16967 error errno 1
+16968 error bufferutil@1.3.0 install: `node-gyp rebuild`
+16968 error Exit status 1
+16969 error Failed at the bufferutil@1.3.0 install script.
+```
+>解决方案：降低node.js版本，最好为[8.X系列](https://npm.taobao.org/mirrors/node/v8.9.1/) !~
+
+2、提示/usr/local/lib/node_modules 目录没有写权限，报错信息如下：
+```
+553 error Error: EACCES: permission denied, access '/usr/local/lib/node_modules/stf/node_modules/@slack/client/node_modules/async'
+2553 error  { Error: EACCES: permission denied, access '/usr/local/lib/node_modules/stf/node_modules/@slack/client/node_modules/async'
+2553 error   stack: 'Error: EACCES: permission denied, access \'/usr/local/lib/node_modules/stf/node_modules/@slack/client/node_modules/async\'',
+2553 error   errno: -13,
+2553 error   code: 'EACCES',
+2553 error   syscall: 'access',
+2553 error   path: '/usr/local/lib/node_modules/stf/node_modules/@slack/client/node_modules/async' }
+2554 error The operation was rejected by your operating system.
+2554 error It is likely you do not have the permissions to access this file as the current user
+2554 error
+2554 error If you believe this might be a permissions issue, please double-check the
+2554 error permissions of the file and its containing directories, or try running
+2554 error the command again as root/Administrator (though this is not recommended).
+2555 verbose exit [ -13, true ]
+```
+>解决方案：
+1、删除原有stf文件夹，重新安装，千万别用sudo来执行安装。
+`rm -rf /usr/local/lib/node_modules/stf/`
+2、给/usr/local/lib/node_modules/stf/赋予权限，更改用户及所属组
+`chown 当前用户:当前用户的默认组 -R 目录`
+
+----
+以上

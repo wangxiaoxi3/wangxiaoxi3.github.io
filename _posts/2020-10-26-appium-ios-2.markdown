@@ -1,0 +1,95 @@
+---
+layout: post
+title: Appium+Python3+iOS定位元素
+date: 2020-10-26 14:32:00 +0900
+category: Appium
+tag: IOS
+---
+# 前言：
+最近在做IOS自动化测试，IOS的Appium环境都配置OK，执行起来真的慢，慢到怀疑人生，那么今天就来总结一下IOS定位方式和各个定位方式的速度排序。
+
+---
+据我观察，按查找元素的顺序速度，从快到慢的顺序如下：
+>ios_predicate >> accessibility_id >> class_name >>xpath
+
+注⚠️：(论坛比较多的说法是class_name>>accessibility_id,在这里我们姑且认为它们的速度是一样的。)
+
+---
+###### 1、元素属性介绍
+![image.png](https://upload-images.jianshu.io/upload_images/7116457-5bbca7cb1c2c702e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+>`type`：元素类型，与className作用一致，如：XCUIElementTypeButton
+`value`： 一般不用
+`name`：元素的文本内容，可用作 AccessibilityId定位方式，如：ClearEmail
+`label`：绝大多数情况下，与 name 作用一致
+`enabled`：元素是否可点击，一般值为true或者false
+`visible`；元素是否可见，一般值为true或者false
+
+----
+###### 2、ios_predicate
+在 iOS 的 UI 自动化中，使用原生支持的Predicate定位方式是最好，可支持元素的单个属性和多个属性定位，强烈推荐使用。
+使用方法，举例如下：
+```
+driver.find_element_by_ios_predicate("value == 'ClearEmail'")
+driver.find_element_by_ios_predicate("type == 'XCUIElementTypeButton' AND value == 'ClearEmail'")
+```
+1)比较运算符：`>、<、==、>=、<=、!=`
+可用于数值和字符串的比较：
+如：`value>100` 或` value == 'ClearEmail'` 或 `value  != 'ClearEmail' `
+>>`driver.find_element_by_ios_predicate("value>100")`
+
+2)范围运算符：`IN、BETWEEN`
+可用于数值和字符串的范围核对
+如：`value BETWEEN {1,6}` 或 `value IN {'Clear','Email'}`
+>>`driver.find_element_by_ios_predicate("value BETWEEN {1,6}")`
+
+3)字符串相关：`CONTAINS、BEGINSWITH、ENDSWITH`
+包含某个字符串，如：`value CONTAINS 'Email'`
+以某个字符串开头，如：`value BEGINSWITH 'Clear'`
+以某个字符串结束，如：`value ENDSWITH '班级Email'`
+>>`driver.find_element_by_ios_predicate("value CONTAINS 'Email'")`
+
+4)通配符： `LIKE`
+其中：`?`代表一个字符，`*`代表多个字符
+如：一个元素的value属性为ClearEmail:
+`value LIKE 'Clear?mail'`
+`value LIKE 'Clear*'`
+以上这么多种文本都可以被识别为同一个元素。
+>>`driver.find_element_by_ios_predicate("value LIKE 'Clear*'")`
+
+5)正则表达式：`MATCHES`
+如：一个元素的value属性为ClearEmail:
+`value MATCHES '^C.+l$'`
+>>`driver.find_element_by_ios_predicate("value MATCHES '^C.+l$'")`
+
+注⚠️：正则表达式详情可参考我的另一篇文章《[Python-正则表达式](https://www.jianshu.com/p/7fa6fe0b39af)》
+6）两种及两种以上属性定位元素：`AND`
+单个属性定位用符号AND连接起来即可,如下：
+>>`driver.find_element_by_ios_predicate("type == 'XCUIElementTypeButton' AND value == 'ClearEmail'")`
+
+---
+###### 3、accessibility_id
+替代以前的`name`定位方式，在 iOS 上，主要使用元素的`label`或`name`（两个属性的值都一样）属性进行定位，如该属性为空，也是不能使用该属性。
+`driver.find_element_by_accessibility_id('ClearEmail')`
+
+-----
+###### 4、class_name
+使用元素的`type`属性定位，特别注意该属性的唯一性！`class_name`唯一的情况并不多，一般情况下用不上。
+`driver.find_element_by_class_name('XCUIElementTypeButton')`
+
+----
+###### 5、xpath
+由于 iOS 10开始使用的 XCUITest 框架原生不支持，定位速度很慢，所以官方现在不推荐大家使用，也有其他替代的定位方式可使用。
+1)使用绝对路径定位:
+`driver.find_element_by_xpath('/XCUIElementTypeApplication/XCUIElementTypeButton')`
+2)使用相对路径定位
+`driver.find_element_by_xpath('//XCUIElementTypeButton')`
+3)通过元素的索引定位
+`driver.find_element_by_xpath('//XCUIElementTypeButton[index]')`
+4.通过元素的属性定位
+一种属性：
+`driver.find_element_by_xpath("//className[@value='ClearEmail']")`
+两种属性：
+`driver.find_element_by_xpath("//className[@value='ClearEmail'][@ visible =true]")`
+部分属性（最强大）：`driver.find_element_by_xpath("//className[contains(@value,'ClearEmail')]")`
+
+
