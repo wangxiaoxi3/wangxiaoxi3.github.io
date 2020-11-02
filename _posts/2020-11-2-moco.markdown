@@ -15,11 +15,11 @@ mock简单的理解就是开发在开发的过程中，需要依赖一部分的�
 1、安装jdk1.8并配置环境变量;\
 2、在该地址中[https://repo1.maven.org/maven2/com/github/dreamhead/moco-runner/1.1.0/moco-runner-1.1.0-standalone.jar](https://repo1.maven.org/maven2/com/github/dreamhead/moco-runner/1.1.0/moco-runner-1.1.0-standalone.jar)
 可以下载moco-runner-1.1.0-standalone.jar;\
-3、新建文件夹moco,并将moco-runner-1.1.0-standalone.jar放到文件夹/moco中;\
-4、同级目录/moco中，存放配置数据。
+3、新建文件夹moco,并将moco-runner-1.1.0-standalone.jar放到文件夹moco中;\
+4、同级目录moco中，存放配置数据。
 
 ### 二、启动moco服务
-1、同级目录/moco中，新建文件test.json，代码如下：
+1、同级目录moco中，新建文件test.json，代码如下：
 ```
 [
   {
@@ -30,7 +30,7 @@ mock简单的理解就是开发在开发的过程中，需要依赖一部分的�
   }
 ]
 ```
-2、进入目录/moco中，运行命令：java -jar moco-runner-1.1.0-standalone.jar http -p 1314 -c test.json\
+2、进入目录moco中，运行命令：java -jar moco-runner-1.1.0-standalone.jar http -p 1314 -c test.json\
 如上的命令中：
 * java -jar moco-runner-1.1.0-standalone.jar是启动jar;
 * moco-runner-1.1.0-standalone.jar 指jar包所在目录（因为jar就在当前目录下所以这里使用的是相对路径）;
@@ -45,7 +45,7 @@ response：Hello, Moco\
 
 ### 三、进阶版moco
 #### 1、Get请求
-同级目录/moco中，新建文件test_get.json，代码如下：
+同级目录moco中，新建文件test_get.json，代码如下：
 ```
 [
  {
@@ -72,7 +72,7 @@ response：Hello, Moco\
 页面返回response：get login test
 
 #### 2、Post请求
-同级目录/moco中，新建文件test_post.json，代码如下：
+同级目录moco中，新建文件test_post.json，代码如下：
 ```
 [
  {
@@ -98,12 +98,12 @@ response：Hello, Moco\
   }
 ]
 ```
-注意:\
-* headers:请求头,根据是form还是json格式的请求来填写\
-* form格式:"content-type": "application/x-www-form-urlencoded"\
-* json格式:"content-type": "application/json"\
-* 请求参数格式以及数据,对应headers的content-type\
-* form格式关键字为forms\
+注意:
+* headers:请求头,根据是form还是json格式的请求来填写
+* form格式:"content-type": "application/x-www-form-urlencoded"
+* json格式:"content-type": "application/json"
+* 请求参数格式以及数据,对应headers的content-type
+* form格式关键字为forms
 * json格式关键字为json
 
 运行命令：java -jar moco-runner-1.1.0-standalone.jar http -p 1314 -c test_post.json\
@@ -121,7 +121,7 @@ response：Hello, Moco\
 ```
 
 #### 3、定制重定向
-同级目录/moco中，新建文件test_redirect.json，代码如下：
+同级目录moco中，新建文件test_redirect.json，代码如下：
 ```
 [
   {
