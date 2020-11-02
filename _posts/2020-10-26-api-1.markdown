@@ -40,7 +40,7 @@ pytest-allure-adaptor已弃用，更换为allure-pytest
 
 __
 ### 二、目录介绍
-![Aff_service.png](https://upload-images.jianshu.io/upload_images/7116457-f7858815cc858a31.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![Aff_service.png](/assets/img/cc/api-1.png)
 
 ---
 
@@ -311,7 +311,7 @@ if __name__ == '__main__':
     cmd = 'allure generate %s -o %s' % (xml_report_path, html_report_path)
     invoke(cmd)
 ```
-7、测试报告![Allure报告.png](https://upload-images.jianshu.io/upload_images/7116457-2c1bff25b27abeab.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+7、测试报告![Allure报告.png](/assets/img/cc/api-2.png)
 
 ----
 以上

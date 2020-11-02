@@ -18,7 +18,7 @@ Xcode：9.3.1
 
 > $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-2、 安装[libimobiledevice](https://www.jianshu.com/p/592fcffdc71a)：
+2、 安装[libimobiledevice](https://www.jianshu.com/p/592fcffdc71a) ：
 
 > $ brew install libimobiledevice --HEAD
 
@@ -42,7 +42,8 @@ Xcode：9.3.1
 
 9、安装appium，appium-doctor
 
-> 进入[**官网**](https://github.com/appium/appium-desktop/releases/tag/v1.6.1)，下载[**Appium-1.6.1.dmg**](https://github.com/appium/appium-desktop/releases/download/v1.6.1/Appium-1.6.1.dmg)，安装即可。
+> 进入[**官网**](https://github.com/appium/appium-desktop/releases/tag/v1.6.1) ，
+> 下载[**Appium-1.6.1.dmg**](https://github.com/appium/appium-desktop/releases/download/v1.6.1/Appium-1.6.1.dmg) ，安装即可。
 
 当然你可以使用命令：npm install -g appium来安装appium，但是后面就会各种报错！！（别问我是怎么知道的，我搞了2天。）
 > $ npm install -g appium-doctor
@@ -78,7 +79,8 @@ info AppiumDoctor
 >sh ./Scripts/bootstrap.sh
 
 3、编译WebDriverAgent.xcodeproj
-Xcode打开当前目录下的WebDriverAgent.xcodeproj文件![WebDriverAgent.xcodeproj.png](https://upload-images.jianshu.io/upload_images/7116457-d808ca600aaed7ac.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+Xcode打开当前目录下的WebDriverAgent.xcodeproj文件
+![WebDriverAgent.xcodeproj.png](/assets/img/cc/ios1-1.png)
 
 
 注意⚠️：进入项目后要编辑一些内容，请无比按照步骤全部修改。步骤见下图！！
@@ -87,29 +89,31 @@ Xcode打开当前目录下的WebDriverAgent.xcodeproj文件![WebDriverAgent.xcod
 
 >2、TARGETS->WebDriverAgentLib的Signing选择使用个人的证书。
 
-![image.png](https://upload-images.jianshu.io/upload_images/7116457-0150ee705dfe7f07.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](/assets/img/cc/ios1-2.png)
 >3、TARGETS->WebDriverAgentRunner的Signing选择使用个人的证书。
 
-![image.png](https://upload-images.jianshu.io/upload_images/7116457-6f2d549f291446ca.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](/assets/img/cc/ios1-3.png)
 >4、PROJECT->WebDriverAgent的Product Bundle Identifier更改为自己命名的Identifier。（所有Identifier注意保持一致！！）
 
-![image.png](https://upload-images.jianshu.io/upload_images/7116457-b9bc46b958191aed.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](/assets/img/cc/ios1-4.png)
 >5、TARGETS->WebDriverAgentLib的Product Bundle Identifier更改为自己命名的Identifier。（所有Identifier注意保持一致！！）
 
-![image.png](https://upload-images.jianshu.io/upload_images/7116457-04fe38808bf74c7a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](/assets/img/cc/ios1-5.png)
 >6、TARGETS->WebDriverAgentRunner的Product Bundle Identifier更改为自己命名的Identifier。（所有Identifier注意保持一致！！）
 
-![image.png](https://upload-images.jianshu.io/upload_images/7116457-9f2cbb97d7562376.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](/assets/img/cc/ios1-6.png)
 >7、Device选择已连接的测试机
 
 >8、点击build按钮来测试，按照步骤设置后，可build succeeded～
 
-![image.png](https://upload-images.jianshu.io/upload_images/7116457-77a424737d2c2dd9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](/assets/img/cc/ios1-7.png)
 
 >9、测试机上安装证书，执行以下命令：
 xcodebuild -project WebDriverAgent.xcodeproj -scheme WebDriverAgentRunner -destination 'id=测试机的udid' test
 
-如果没有报错证明安装成功，同时手机上会安装一个WebDriverAgent软件。需要在手机设置->通用->设备管理->信任开发者。如下图：![image.png](https://upload-images.jianshu.io/upload_images/7116457-e105bafca9ffc7d1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)![image.png](https://upload-images.jianshu.io/upload_images/7116457-d830b1a459ca3941.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+如果没有报错证明安装成功，同时手机上会安装一个WebDriverAgent软件。需要在手机设置->通用->设备管理->信任开发者。如下图：
+![image.png](/assets/img/cc/ios1-8.png)
+![image.png](/assets/img/cc/ios1-9.png)
 
 ---
 #### 三、Appium Client端

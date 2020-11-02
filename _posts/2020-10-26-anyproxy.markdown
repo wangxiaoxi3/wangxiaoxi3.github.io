@@ -8,7 +8,7 @@ tag: AnyProxy
 
 ## 前言：
 AnyProxy是一个开放式的HTTP代理服务器。
-Github主页：[https://github.com/alibaba/anyproxy]
+Github主页：[https://github.com/alibaba/anyproxy](https://github.com/alibaba/anyproxy)
 主要特性包括：
 *   基于Node.js，开放二次开发能力，允许自定义请求处理逻辑
 *   支持Https的解析
@@ -41,13 +41,17 @@ sudo anyproxy --port 8888
 ```
  命令行执行：sudo anyproxy –root
 ```
-执行完成之后，会打开证书的安装路径，即可看到 rootCA.crt 文件,双击打开，找到刚刚导入的AnyProxy证书，配置为信任（Always Trust）。![image.png](https://upload-images.jianshu.io/upload_images/7116457-08b35b3415e66d40.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+执行完成之后，会打开证书的安装路径，即可看到 rootCA.crt 文件,双击打开，找到刚刚导入的AnyProxy证书，配置为信任（Always Trust）。
+![image.png](/assets/img/cc/any-1.png)
 2、iOS系统信任CA证书
 1、配置手机Wi-Fi代理：本地IP+8001
-2、点击web界面http://localhost:8002/中的 Root CA，按提示扫描二维码即可安装![image.png](https://upload-images.jianshu.io/upload_images/7116457-acd3e55ac137a0f2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-3、按提示扫描二维码即可安装![image.png](https://upload-images.jianshu.io/upload_images/7116457-e60cec34e3af9758.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+2、点击web界面http://localhost:8002/中的 Root CA，按提示扫描二维码即可安装
+![image.png](/assets/img/cc/any-2.png)
+3、按提示扫描二维码即可安装
+![image.png](/assets/img/cc/any-3.png)
 4、信任CA证书：
-设置->通用->关于本机->证书信任设置 中把AnyProxy证书的开关打开，否则safari将报错。![image.png](https://upload-images.jianshu.io/upload_images/7116457-3da2028cd768d859.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+设置->通用->关于本机->证书信任设置 中把AnyProxy证书的开关打开，否则safari将报错。
+![image.png](/assets/img/cc/any-4.png)
 
 ----
 #### 三、rule模块
@@ -126,7 +130,8 @@ for i in range(0, len(res)):
 file.save("/Users/wangjuan/log1/log.xls")
 ```
 
-结果如下图：![image.png](https://upload-images.jianshu.io/upload_images/7116457-91c5002eb6f74749.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+结果如下图：
+![image.png](/assets/img/cc/any-5.png)
 
 ----
 以上～欢迎沟通～～

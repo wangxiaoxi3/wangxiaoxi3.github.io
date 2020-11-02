@@ -88,19 +88,19 @@ aapt dump badging <file.apk>
 
 使用方法：```driver.find_element_by_id(‘com.android.calculator2:id/formula’)```
 
-![image](http://upload-images.jianshu.io/upload_images/7116457-c94cd4b1cd7ba5ef?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image](/assets/img/cc/by-1.png)
 
 2、name定位
 
 使用方法：```driver.find_element_by_name("9"))```
 
-![image](http://upload-images.jianshu.io/upload_images/7116457-cec76b778ea18828?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image](/assets/img/cc/by-2.png)
 
 3、class name定位
 
 使用方法：```driver.find_element_by_class_name(“android.widget.Button"))```
 
-![image](http://upload-images.jianshu.io/upload_images/7116457-332c077f8a76ce23?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image](/assets/img/cc/by-3.png)
 
 4、XPath定位
 
@@ -108,7 +108,7 @@ aapt dump badging <file.apk>
 
 ```driver.find_element_by.xpath(“//android.view.ViewGroup/android.widget.Button”)```
 
-![image](http://upload-images.jianshu.io/upload_images/7116457-6a4c2aba2e46fd8a?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image](/assets/img/cc/by-4.png)
 
 当果如果出现class相同的情况下可以用控件的属性值进行区分。
 ```
@@ -128,7 +128,7 @@ XPath在Appium上的用法依然很强大，有时需要写更臭更长的定位
 
 ```driver.find_element_by_accessibility_id("plus").click();```
 
-![image](http://upload-images.jianshu.io/upload_images/7116457-db1ab87f3cd52500?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image](/assets/img/cc/by-5.png)
 
 6、android uiautomator定位
 
@@ -140,7 +140,7 @@ XPath在Appium上的用法依然很强大，有时需要写更臭更长的定位
 
 ```driver.find_element_by_android_uiautomator("new UiSelector().description(\”plus\")").click();```
 
-![image](http://upload-images.jianshu.io/upload_images/7116457-e3c441a0b172cbe1?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image](/assets/img/cc/by-6.png)
 
 * * *
 

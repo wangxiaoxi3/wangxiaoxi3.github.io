@@ -35,7 +35,8 @@ self.driver.find_element_by_xpath(locator).click()
 ---
 
 #### 三、错误方法：'autoAcceptAlerts': True
-Appium更新后，改为使用XCUITest后，该参数：autoAcceptAlerts 已经废弃，[官网](https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/caps.md)已经详细说明，请大家及时更新信息，不要被这个问题所困扰。
+Appium更新后，改为使用XCUITest后，该参数：autoAcceptAlerts 已经废弃，[官网](https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/caps.md)
+已经详细说明，请大家及时更新信息，不要被这个问题所困扰。
 
 ----
 以上

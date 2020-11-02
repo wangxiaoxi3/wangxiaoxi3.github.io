@@ -11,9 +11,10 @@ tag: libimobiledevice
 ----
 #### 一、Xcode
 版本号：9.4.1
-通过Window->Devices and Simulators,打开Devices and Simulators界面，选择我们的手机，点击view device logs能看到手机中运行的进程输出的日志。如图：![image.png](https://upload-images.jianshu.io/upload_images/7116457-b5b3871a7735742c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+通过Window->Devices and Simulators,打开Devices and Simulators界面，选择我们的手机，点击view device logs能看到手机中运行的进程输出的日志。如图：
+![image.png](/assets/img/cc/lib-1.png)
 
-![image.png](https://upload-images.jianshu.io/upload_images/7116457-17ea0cd74a67ad09.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](/assets/img/cc/lib-2.png)
 
 ----
 #### 二、libimobiledevice
@@ -27,7 +28,8 @@ brew install --HEAD libimobiledevice
 ```
 在命令行输入：idevicesyslog
 ````
-就可以在屏幕上看见手机上所有的日志了。![log.png](http://upload-images.jianshu.io/upload_images/7116457-13bb65d0b97f902b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+就可以在屏幕上看见手机上所有的日志了。
+![log.png](/assets/img/cc/lib-3.png)
 
 2、查看我们想要的日志
 ```
@@ -41,16 +43,19 @@ idevicesyslog >> iphone.log &
 tail -f iphone.log
 tail -f iphone.log | grep 'QQ' # 查看包含QQ的行
 ```
-如下图：![QQ.png](http://upload-images.jianshu.io/upload_images/7116457-a0a563ca1720d6e4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+如下图：![QQ.png](/assets/img/cc/lib-4.png)
 
 ---
 #### 三、控制台
 在用过各种办法查看App日志后，还是觉得苹果系统自带的工具用起来最方便，不用安装，不用命令行，傻瓜式操作，非常方便。
-连上手机，在LaunchPad其他文件中打开控制台应用，或者搜索Console.app打开控制台应用，可以看到左侧一栏中有我们的手机设备，选择就可以，如图：![控制台.png](http://upload-images.jianshu.io/upload_images/7116457-e585843d2b26f840.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-右侧输出的日志不仅有我们自己的App还有其他进程的日志，怎么过滤？非常简单，选中一条我们的日志，在进程名字上右键，选择显示进程名，然后就只会显示我们App的日志。如果显示的列名中没有进程名，我们可以在其他列名上右键，在弹出的菜单中勾选上进程就可以了。如图显示WeChat打印出的日志：![WeChat1.png](http://upload-images.jianshu.io/upload_images/7116457-6fcc92f8506ef77b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+连上手机，在LaunchPad其他文件中打开控制台应用，或者搜索Console.app打开控制台应用，可以看到左侧一栏中有我们的手机设备，选择就可以，如图：
+![控制台.png](/assets/img/cc/lib-5.png)
+右侧输出的日志不仅有我们自己的App还有其他进程的日志，怎么过滤？非常简单，选中一条我们的日志，在进程名字上右键，选择显示进程名，然后就只会显示我们App的日志。
+如果显示的列名中没有进程名，我们可以在其他列名上右键，在弹出的菜单中勾选上进程就可以了。如图显示WeChat打印出的日志：
+![WeChat1.png](/assets/img/cc/lib-6.png)
 
 
-![WeChat2.png](http://upload-images.jianshu.io/upload_images/7116457-5da7b50619d5210e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![WeChat2.png](/assets/img/cc/lib-7.png)
 
 ---
 以上，按照个人习惯来选择工具即可。

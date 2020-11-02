@@ -60,7 +60,8 @@ TouchAction(driver).wait(1000);
 TouchAction.press(beginX,beginY).moveTo(xStep,yStep).moveTo(xStep,yStep).release().perform();
 ```
 打开Appium-Inspector来查看手势对应的各个点的坐标。
-选择[Swipe By Coordinates]，可查看任意点的坐标。可选择手势触摸点的中心位置。如下图所示：作者分别选择左上角的4个点，即可模拟手势来执行登陆操作。![Appium-Inspector.png](https://upload-images.jianshu.io/upload_images/7116457-6c78b1838cfa1c0d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+选择[Swipe By Coordinates]，可查看任意点的坐标。可选择手势触摸点的中心位置。如下图所示：作者分别选择左上角的4个点，即可模拟手势来执行登陆操作。
+![Appium-Inspector.png](/assets/img/cc/click-1.png)
 代码如下：
 ```
 # -*- coding: utf-8 -*-
@@ -95,7 +96,8 @@ action.press(x=98, y=321).wait(100).move_to(x=208, y=321).wait(100).move_to(x=20
 即可计算出第一个触摸点的中心点坐标分别为：
 ```start_x + start_width/2```,   ```start_y + start_height/2```
 然后在计算出第二个触摸点的中心点大致坐标为：
-```start_x+start_width*2```,   ```y=start_y+start_height*2``` ![Appium-Inspector-2.png](https://upload-images.jianshu.io/upload_images/7116457-2bb1f64ea05412ca.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+```start_x+start_width*2```,   ```y=start_y+start_height*2```
+![Appium-Inspector-2.png](/assets/img/cc/click-2.png)
 其他坐标均可按照此计算方式，详情见具体例子。
 ```
 # -*- coding: utf-8 -*-

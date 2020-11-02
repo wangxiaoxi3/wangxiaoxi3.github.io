@@ -16,7 +16,7 @@ tag: IOS
 
 ---
 ###### 1、元素属性介绍
-![image.png](https://upload-images.jianshu.io/upload_images/7116457-5bbca7cb1c2c702e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](/assets/img/cc/ios2.png)
 >`type`：元素类型，与className作用一致，如：XCUIElementTypeButton
 `value`： 一般不用
 `name`：元素的文本内容，可用作 AccessibilityId定位方式，如：ClearEmail
