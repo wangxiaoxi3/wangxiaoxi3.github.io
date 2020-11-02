@@ -1,0 +1,142 @@
+---
+layout: post
+title: 接口测试-moco框架
+date: 2020-11-02 15:30:00 +0900
+category: 接口自动化
+tag: moco
+---
+
+### 前言-什么是mock？
+mock简单的理解就是开发在开发的过程中，需要依赖一部分的接口，但是对方没有提供或者环境等等情况，总之是没有，那么开发使用mock server自己来mock数据，
+方便自己正常的进行开发和对编写的功能进行自测。\
+[moco框架](https://github.com/dreamhead/moco) 即提供mock server功能。
+
+### 一、moco安装配置
+1、安装jdk1.8并配置环境变量;\
+2、在该地址中[https://repo1.maven.org/maven2/com/github/dreamhead/moco-runner/1.1.0/moco-runner-1.1.0-standalone.jar](https://repo1.maven.org/maven2/com/github/dreamhead/moco-runner/1.1.0/moco-runner-1.1.0-standalone.jar)
+可以下载moco-runner-1.1.0-standalone.jar;\
+3、新建文件夹moco,并将moco-runner-1.1.0-standalone.jar放到文件夹/moco中;\
+4、同级目录/moco中，存放配置数据。
+
+### 二、启动moco服务
+1、同级目录/moco中，新建文件test.json，代码如下：
+```
+[
+  {
+    "response" :
+      {
+        "text" : "Hello, Moco"
+      }
+  }
+]
+```
+2、进入目录/moco中，运行命令：java -jar moco-runner-1.1.0-standalone.jar http -p 1314 -c test.json\
+如上的命令中：
+* java -jar moco-runner-1.1.0-standalone.jar是启动jar;
+* moco-runner-1.1.0-standalone.jar 指jar包所在目录（因为jar就在当前目录下所以这里使用的是相对路径）;
+* http表示进行的是http协议;
+* -p后面跟的是端口号，这里端口号指的是1314;
+* -c后面跟编写的json文件，这里是test.json，见执行如上的命令后出现的信息；
+(切记无任何的错误信息表示OK，如果有错误，慢慢的进行检查错误)，见截图：
+![image](/assets/img/cc/moco-1.png)
+接下来，在浏览器中访问：[http://localhost:1314/](http://localhost:1314/) ，页面返回
+response：Hello, Moco\
+至此启动moco服务已成功。
+
+### 三、进阶版moco
+#### 1、Get请求
+同级目录/moco中，新建文件test_get.json，代码如下：
+```
+[
+ {
+    "description": "含参数的get请求",
+    "request": {
+      "method": "get",
+      "uri": "/login",
+      "queries": {
+        "p1": "v1",
+        "p2": "v2"
+      }
+    },
+    "response": {
+      "text": "get login test",
+      "headers":{
+        "Content-Type":"text/html;charset=utf-8"
+      }
+    }
+  }
+]
+```
+运行命令：java -jar moco-runner-1.1.0-standalone.jar http -p 1314 -c test_get.json\
+接下来，在浏览器中访问：[http://localhost:1314/login?p1=v1&p2=v2](http://localhost:1314/login?p1=v1&p2=v2)
+页面返回response：get login test
+
+#### 2、Post请求
+同级目录/moco中，新建文件test_post.json，代码如下：
+```
+[
+ {
+    "description": "json参数的post请求",
+    "request": {
+      "method": "post",
+      "uri": "/login",
+      "json": {
+        "password": "test123",
+        "email": "test@gmail.com"
+        }
+    },
+    "response": {
+      "json": {
+        "code":0,
+        "msg":"",
+        "token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9"
+      },
+      "headers":{
+        "Content-Type":"text/html;charset=utf-8"
+      }
+    }
+  }
+]
+```
+注意:\
+* headers:请求头,根据是form还是json格式的请求来填写\
+* form格式:"content-type": "application/x-www-form-urlencoded"\
+* json格式:"content-type": "application/json"\
+* 请求参数格式以及数据,对应headers的content-type\
+* form格式关键字为forms\
+* json格式关键字为json
+
+运行命令：java -jar moco-runner-1.1.0-standalone.jar http -p 1314 -c test_post.json\
+接下来，在postman中发送post请求：[http://localhost:1314/login](http://localhost:1314/login)
+ 其中请求中json参数为：
+```
+{
+   "password": "test123",
+   "email": "test@gmail.com"
+}
+```
+返回response为：
+```
+{"code":0,"msg":"","token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9"}
+```
+
+#### 3、定制重定向
+同级目录/moco中，新建文件test_redirect.json，代码如下：
+```
+[
+  {
+    "description":"重定向到指定网站",
+    "request":{
+      "method":"get",
+      "uri":"/login_redirect"
+    },
+    "redirectTo":"https://wangxiaoxi.cn"
+  }
+]
+```
+运行命令：java -jar moco-runner-1.1.0-standalone.jar http -p 1314 -c test_redirect.json\
+接下来，在浏览器中访问：[http://localhost:1314/login_redirect](http://localhost:1314/login_redirect)
+自动重定向到：[https://wangxiaoxi.cn](https://wangxiaoxi.cn)
+
+---
+以上～
