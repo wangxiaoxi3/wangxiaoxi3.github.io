@@ -3,7 +3,7 @@ layout: post
 title: SQL基础语句
 date: 2020-09-28 14:20:23 +0900
 category: 数据库
-tag: Sql
+tag: SQL
 ---
 
 * 显示数据库

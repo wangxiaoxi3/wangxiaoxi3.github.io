@@ -2,8 +2,8 @@
 layout: post
 title: 分区函数Partition By的用法
 date: 2020-10-30 15:30:00 +0900
-category: SQL
-tag: Partition By
+category: 数据库
+tag: SQL
 ---
 # 前言：
 partition by关键字是分析性函数的一部分，它和聚合函数（如group by）不同的地方在于它能返回一个分组中的多条记录，而聚合函数一般只有一条反映统计值的记录。\
